@@ -8,5 +8,27 @@ function generateBoard() {
 }
 
 function Battlecat() {
-  this.board = generateBoard();
+  this.playerBoard = generateBoard();
+  this.enemyBoard = generateBoard();
+  this.id = '';
+  this.playerName = '';
+
+  return this;
 }
+
+Battlecat.prototype.placePiece = function (piece, startPosition, direction) {
+  
+};
+
+Battlecat.prototype.tryBomb = function (position) {
+
+};
+
+Battlecat.prototype.removePiece = function (piece) {
+
+};
+
+module.exports.Battlecat = Battlecat;
+module.exports.createGame = function () {
+  return new Battlecat();
+};
