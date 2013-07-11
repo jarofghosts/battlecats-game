@@ -1,0 +1,22 @@
+{
+  "name": "battlecats-game",
+  "version": "0.0.0",
+  "description": "battleship in js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jarofghosts/battlecats-game.git"
+  },
+  "keywords": [
+    "battleship",
+    "game"
+  ],
+  "author": "jesse keane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarofghosts/battlecats-game/issues"
+  }
+}
