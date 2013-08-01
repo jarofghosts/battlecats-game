@@ -1,3 +1,11 @@
+var pieces = {
+  destroyer: 2,
+  cruiser: 2,
+  submarine: 3,
+  battleship: 4,
+  carrier: 5
+};
+
 function generateBoard() {
   var board = [],
       i = 0;
@@ -29,6 +37,6 @@ Battlecat.prototype.removePiece = function (piece) {
 };
 
 module.exports.Battlecat = Battlecat;
-module.exports.createGame = function () {
+module.exports.createPlayer = function () {
   return new Battlecat();
 };
