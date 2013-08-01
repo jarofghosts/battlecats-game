@@ -1,9 +1,24 @@
 var pieces = {
-  destroyer: 2,
-  cruiser: 2,
-  submarine: 3,
-  battleship: 4,
-  carrier: 5
+  destroyer: {
+    size: 2,
+    code: 'D'
+  },
+  cruiser: {
+    size: 2,
+    code: 'Z'
+  },
+  submarine: {
+    size: 3,
+    code: 'S'
+  },
+  battleship: {
+    size: 4,
+    code: 'B'
+  },
+  carrier: {
+    size: 5,
+    code: 'C'
+  }
 };
 
 function generateBoard() {
@@ -24,8 +39,23 @@ function Battlecat() {
   return this;
 }
 
-Battlecat.prototype.placePiece = function (piece, startPosition, direction) {
-  
+Battlecat.prototype.placePiece = function (code, positions) {
+};
+
+Battlecat.prototype.tryPlace = function (piece, startPosition, direction) {
+  var size = pieces[piece].size,
+      i = 0,
+      x = startPosition[0],
+      y = startPosition[1],
+      positions = [];
+  if ((direction == 'v' && x + size > 9) || (direction == 'h' && y + size > 9)) return;
+  for (; i < size; ++i) {
+    if (this.playerBoard[x][y] !== undefined) return;
+    positions.push([x, y]);
+    if (direction == 'v') { x++; }
+    else if (direction == 'h') { y++; }
+  }
+  this.placePiece(pieces[piece].code, positions);
 };
 
 Battlecat.prototype.tryBomb = function (position) {
