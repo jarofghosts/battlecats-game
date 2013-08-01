@@ -40,6 +40,13 @@ function Battlecat() {
 }
 
 Battlecat.prototype.placePiece = function (code, positions) {
+  var i = 0,
+      l = positions.length;
+  for (; i < l; ++i) {
+    var x = i[0],
+        y = i[1];
+    this.playerBoard[x][y] = code;
+  }
 };
 
 Battlecat.prototype.tryPlace = function (piece, startPosition, direction) {
