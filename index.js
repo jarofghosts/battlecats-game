@@ -59,8 +59,8 @@ Battlecat.prototype.tryPlace = function (piece, startPosition, direction) {
   for (; i < size; ++i) {
     if (this.playerBoard[x][y] !== undefined) return;
     positions.push([x, y]);
-    if (direction == 'v') { x++; }
-    else if (direction == 'h') { y++; }
+    if (direction == 'v') x++;
+    else if (direction == 'h') y++;
   }
   this.placePiece(pieces[piece].code, positions);
 };
@@ -70,7 +70,7 @@ Battlecat.prototype.tryBomb = function (position) {
 };
 
 Battlecat.prototype.removePiece = function (piece) {
-
+  
 };
 
 module.exports.Battlecat = Battlecat;
